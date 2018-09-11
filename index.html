@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://hosted-sip.civic.com/css/civic-modal.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://hosted-sip.civic.com/js/civic.sip.min.js"></script>
+    <script src="https://raw.githubusercontent.com/emn178/js-sha256/master/build/sha256.min.js"></script>
+    <script type="text/javascript" src="qrc:///qtwebchannel/qwebchannel.js"></script>
+    <title>Civic test</title>
+    <section id='token' hidden></section>
+
+
+</head>
+
+<body>
+    <script>
+
+        $(document).ready(function() {
+            var civicSip = new civic.sip({
+                appId: 'SOME APP ID'
+            });
+
+            civicSip.signup({
+                style: 'popup',
+                scopeRequest: civicSip.ScopeRequests.BASIC_SIGNUP
+            });
+
+            civicSip.on('auth-code-received', function (event) {
+                console.log('auth-code-received', event.response);
+                window.civicToken = event.response;
+            	token.innerText += window.civicToken
+            });
+
+            civicSip.on('civic-sip-error', function (error) {
+                console.log('   Error type = ' + error.type);
+                console.log('   Error message = ' + error.message);
+            });
+        })
+    </script>
+</body>
+
+</html>
