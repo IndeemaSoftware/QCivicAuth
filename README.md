@@ -1,3 +1,4 @@
+![](https://github.com/IndeemaSoftware/SmartLock/blob/Assets/indeema_logo.jpg?raw=true)
 # QCivicAuth
 Qt C++ desktop and mobile SDK for civic authentication
 
