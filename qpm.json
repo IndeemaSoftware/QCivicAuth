@@ -1,0 +1,22 @@
+{
+  "name": "com.indeema.qcivicauth",
+  "description": "",
+  "author": {
+    "name": "Indeema Software Inc.",
+    "email": "support@indeema.com"
+  },
+  "repository": {
+    "type": "GITHUB",
+    "url": "git@github.com:IndeemaSoftware/QCivicAuth.git"
+  },
+  "version": {
+    "label": "0.1.0",
+    "revision": "",
+    "fingerprint": ""
+  },
+  "dependencies": [
+  ],
+  "license": "MIT",
+  "pri_filename": "QCivicAuth.pri",
+  "webpage": ""
+}
