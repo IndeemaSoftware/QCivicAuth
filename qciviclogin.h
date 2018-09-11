@@ -10,6 +10,8 @@ class QWebEngineView;
 class QWebEnginePage;
 class QVBoxLayout;
 class QTimer;
+class QCloseEvent;
+class QMoveEvent;
 
 /**
  * @brief The EECivicLoginIn class
@@ -19,8 +21,10 @@ class QCivicLogIn :  public QWidget
 {
     Q_OBJECT
 public:
-    QCivicLogIn(QWidget *parent = 0);
+    QCivicLogIn(QWidget *parent = nullptr);
 
+
+    QString civicAddress() const;
 
 signals:
     /**
@@ -43,6 +47,9 @@ public slots:
      * If has been read succesfully - close window and emit signal about token receiving
      */
     void readTokenTag();
+protected:
+    void closeEvent(QCloseEvent *event);
+    void moveEvent(QMoveEvent *event);
 
 private:
     QWebEngineView *mWebView;
@@ -50,7 +57,7 @@ private:
     QVBoxLayout *mBoxLayout;
     QTimer *mTimer;
 
-    static const QString mCivicAddress;
+    const QString mCivicAddress;
     static constexpr int mTimerDelay = 1000;
 };
 

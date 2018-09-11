@@ -7,8 +7,8 @@
 #include <QNetworkReply>
 #include <QTimer>
 #include <QFile>
-
-const QString QCivicLogIn::mCivicAddress("https://internxt.com/civic/");
+#include <QCloseEvent>
+#include <QMoveEvent>
 
 QCivicLogIn::QCivicLogIn(QWidget *parent):
     QWidget{parent}
@@ -54,4 +54,21 @@ void QCivicLogIn::readTokenTag()
             emit receivedToken(lToken);
         }
     });
+}
+
+void QCivicLogIn::closeEvent(QCloseEvent *event)
+{
+    event->ignore();
+    hide();
+}
+
+void QCivicLogIn::moveEvent(QMoveEvent *event)
+{
+    this->resize(width(),height());
+    QWidget::moveEvent(event);
+}
+
+QString QCivicLogIn::civicAddress() const
+{
+    return mCivicAddress;
 }

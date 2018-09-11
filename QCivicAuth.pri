@@ -20,12 +20,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-        $$PWD/mainwindow.cpp \
         $$PWD/qciviclogin.cpp
 
 HEADERS += \
-        $$PWD/mainwindow.h \
         $$PWD/qciviclogin.h
-
-FORMS += \
-        mainwindow.ui
