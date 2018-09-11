@@ -72,3 +72,9 @@ QString QCivicLogIn::civicAddress() const
 {
     return mCivicAddress;
 }
+
+bool QCivicLogIn::setCivicAddress(QString address)
+{
+    mCivicAddress = address;
+    return QUrl(address).isValid();
+}

@@ -1,4 +1,4 @@
-#ifndef EECIVICLOGININ_H
+﻿#ifndef EECIVICLOGININ_H
 #define EECIVICLOGININ_H
 
 #include <QWidget>
@@ -25,6 +25,7 @@ public:
 
 
     QString civicAddress() const;
+    bool setCivicAddress(QString);
 
 signals:
     /**
@@ -57,7 +58,7 @@ private:
     QVBoxLayout *mBoxLayout;
     QTimer *mTimer;
 
-    const QString mCivicAddress;
+    QString mCivicAddress;
     static constexpr int mTimerDelay = 1000;
 };
 
