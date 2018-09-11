@@ -19,3 +19,5 @@ Before starting using civic don't forget load [standart civic page] (https://git
 ```
 
 as a parameter in logedToCivic you will get civic token.
+
+To know more about us and our [Web expertise](https://indeema.com/services/webdevelopment), visit our website https://indeema.com
