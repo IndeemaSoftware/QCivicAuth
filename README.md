@@ -9,7 +9,7 @@ Before starting using civic don't forget load [standart civic page] (https://git
 
 ```cpp
     QCivicLogIn *mCivicLogin = new QCivicLogIn();
-    if (!mCivicLogin->setCivicAddress("https://internxt.com/civic")) {
+    if (!mCivicLogin->setCivicAddress("Some unique address where index.html with civic data is located")) {
         qDebug() << "Warning: Civic url page is invalid. But we still store it";
     }
     
